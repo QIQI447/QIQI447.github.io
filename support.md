@@ -1,54 +1,20 @@
 ---
 layout: page
-title: 待开发模块~
+title: 联系与反馈
+kicker: Say hello
+description: 如果你发现问题，或想交流某个话题，欢迎与我联系。
+permalink: /support/
 ---
 
-网站源码在 <a target="_blank" href='https://github.com/lyrazeta/lyrazeta.github.io/'>Github</a> 上，求 Star ~
+## 找到我
 
+目前最直接的方式是在 GitHub 上联系我：
 
-遇到问题可以在[Issues](https://github.com/lyrazeta/lyrazeta.github.io/issues)中提问。
+- 查看我的 [GitHub 主页](https://github.com/QIQI447)
+- 为本站提出 [Issue](https://github.com/QIQI447/qq.github.io/issues)
+- 如果这个项目对你有帮助，也欢迎点一个 Star
 
+## 关于本站
 
-<h3> 这是一个小标题样例 </h3>
-
-……正文部分……，`重点方框1`，`重点方框2`。
-
-**注：** 这是一个注释样例。
-
-
-<h3> 我能给你解答的问题有 </h3>
-
-* 可以分点
-* 小点2
-* 小点3
-
-
-<h3> 我想成为一名略懂光学的开发者 </h3>
-
-转开发呢？
-
-还是转算法呢？
-
-还是嵌入式？
-
-或者光工？
-
-我可以是六边形战士吗~
-
-
-<h3> 我想在这里插两张图片，就插就插 </h3> 
-
-![](/images/payimg/mountain.jpg)
-
-![](/images/payimg/tree.jpg)
-
-<h3> 如何联系到我 </h3>
-
-<p> 
-email：你猜@outlook.com       
-<p> 
-CSDN:  **
-<p> 
-
-{% include comments.html %}
+这是一个完全静态的 Jekyll 网站，不会收集表单信息，也没有接入原模板作者的广告或访问统计。网站源码公开在 GitHub，页面内容会随仓库更新自动部署。
 

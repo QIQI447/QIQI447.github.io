@@ -1,64 +1,31 @@
-<header class="panel-cover {% if page.layout == 'post' or page.layout == 'page' %}panel-cover--collapsed{% endif %}" style="background-image: url('/images/background-cover.jpg')">
-  <div class="panel-main">
+<header class="site-header" data-site-header>
+  <div class="site-header__inner shell">
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="返回 {{ site.title }} 首页">
+      <img class="site-brand__avatar" src="{{ '/images/avatar-profile.png' | relative_url }}" alt="">
+      <span class="site-brand__text">
+        <strong>{{ site.title }}</strong>
+        <small>{{ site.avatarDesc }}</small>
+      </span>
+    </a>
 
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-        <!-- 头像效果-start -->
-        <div class="ih-item circle effect right_to_left">            
-            <a href="/#blog" title="前往 {{ site.title }} 的主页" class="blog-button">
-                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
-                <div class="info">
-                    <div class="info-back">
-                        <h2> 
-                            {% if site.avatarTitle %}
-                                {{site.avatarTitle}}
-                            {% endif %}
-                        </h2>
-                        <p>
-                           {% if site.avatarDesc %}
-                                {{site.avatarDesc}}
-                            {% endif %}
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- 头像效果-end -->
-        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for {{ site.title }}" class="blog-button">{{ site.title }}</a></h1>
-        {% if site.subtitle %}
-        <span class="panel-cover__subtitle panel-subtitle">{{site.subtitle}}</span>
-        {% endif %}
-        <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">{{ site.description }}</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
-        
-        {% if site.welcome_message %}
-        <p class="panel-cover__description">{{ site.welcome_message }}</p>
-        {% endif %}
-        
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+      <span class="sr-only">打开导航</span>
+      <span></span><span></span><span></span>
+    </button>
 
-        <div class="navigation-wrapper">
-          <div>
-            <nav class="cover-navigation cover-navigation--primary">
-              <ul class="navigation">
-                <li class="navigation__item"><a href="/#blog" title="{{site.blog_button.description}}" class="blog-button">{{site.blog_button.title}}</a></li>
-                {% for item in site.nav %}
-                  <li class="navigation__item"><a href="{{item.url}}" title="{{item.description}}">{{item.title}}</a></li>
-                {% endfor %}
-              </ul>
-            </nav>
-          </div>          
-        </div>
-
-
-        </div>
-      </div>
-    </div>
-    
-    {% if site.cover_color %}
-    <div class="panel-cover--overlay cover-{{site.cover_color}}"></div>
-    {% else %}
-    <div class="panel-cover--overlay cover-disabled"></div>
-    {% endif %}
+    <nav id="site-navigation" class="site-nav" aria-label="主要导航" data-site-nav>
+      {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}" {% if page.url == item.url or page.permalink == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+      <a class="site-nav__github" href="https://github.com/{{ site.social.github }}" target="_blank" rel="noreferrer">
+        GitHub
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 4h10.5v10.5h-2V7.4l-8.8 8.8-1.4-1.4L12.6 6H5.5V4Z"/></svg>
+      </a>
+      <button class="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式" data-theme-toggle>
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 15.2A8.5 8.5 0 0 1 8.8 3.3 8.5 8.5 0 1 0 20.7 15.2Z"/></svg>
+      </button>
+    </nav>
   </div>
 </header>
+

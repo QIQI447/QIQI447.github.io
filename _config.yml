@@ -1,90 +1,80 @@
-# Basic
-title: LyraZeta
-subtitle: 个人站
-description: 十年寒窗无人问，一举成名天下知
-# 头像里面的标题
-avatarTitle: lyra
-# 头像里面的描述
-avatarDesc: 光学工程 / 开发
-url: "https://github.com/LyraZeta/LyraZeta.github.io.git"
-# url: "https://lyrazeta.space"
+# Site identity
+title: QIQI447
+subtitle: 个人主页
+description: 记录学习、项目与持续发生的想法。
+author: QIQI447
+avatarTitle: QIQI447
+avatarDesc: Explore · Build · Share
 
-# 博客是否自动生成目录，false为不生成
+# This repository is currently published as a GitHub Pages project site.
+# If you rename it to QIQI447.github.io, change baseurl to "".
+url: "https://qiqi447.github.io"
+baseurl: "/qq.github.io"
+repository: QIQI447/qq.github.io
+version: "20260808"
+lang: zh-CN
+timezone: Asia/Shanghai
+
 enableToc: true
 
-# Comment
-# comment:
-#     # livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
-#     disqus: leopard
-#     # uyan: 2143225  # 有言id,登录有言官网申请
-
-# Social
 social:
-    # weibo: xxx
-    github: LyraZeta
-    # zhihu: xxx
-    # juejin: xxx
-    # jianshu: xxxxx
-    # twitter: 
-    mail: lyrazeta@outlook.com
+  github: QIQI447
 
+blog_button:
+  title: 阅读文章
+  description: 查看最新文章
 
-# 百度统计 
-# 使用博客模板请去掉或者更换 id 
-baidu:
-    # id: ac013b7eabeec996109110f84a08c498  # .github.io
-    id: 641e7528bb28dcdde3c3a195f207cbb7  # .space
-
-# Google Analytics
-# 使用博客模板请去掉或者更换 id
-# ga:
-#     id: UA-84134159-3  
-#     host: auto
-
-# Cloudflare Web Analytics
-cloudflare:
-    token: cca534cddcdd47ae911f8da35c780c04
-
-
-# 《--------------- 配置信息 ----------------》
-
+nav:
+  - { title: 首页, description: home, url: '/' }
+  - { title: 文章, description: archive, url: '/archive/' }
+  - { title: 标签, description: tags, url: '/tags/' }
+  - { title: 关于, description: about, url: '/about/' }
 
 permalink: /:year/:month/:title/
-# Format
 markdown: kramdown
 highlighter: rouge
 kramdown:
-    input: GFM
-    math_engine: mathjax
-    math_engine_opts:
-        preview: false
+  input: GFM
+  math_engine: mathjax
+  math_engine_opts:
+    preview: false
 
-textColor: #FF0000
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
 
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: clear
-
-# The blog button should not be removed.
-blog_button:
-    title: 博客主页
-
-# Navigation buttons in the front page.s
-nav:
-    - {title: 所有文章, description: archive, url: '/archive'}   
-    - {title: 标签, description: tags, url: '/tags'}      
-    - {title: 技术支持, description: support, url: '/support'}      
-    - {title: 关于我, description: about, url: '/about'}   
-    
-
-# Pagination
-plugins: [jekyll-paginate,jekyll-sitemap]
-paginate: 20
+paginate: 8
 paginate_path: "page/:num/"
 
+# The fork contains the upstream author's example posts. Keep the source files
+# for reference, but do not publish them as QIQI447's work.
+defaults:
+  - scope: { path: "_posts/Course_NeuralNetwork", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/Course_Optoelectronics", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/LLM", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/Work_Diary", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/interview", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/isp", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/meta", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/optics", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/projects", type: posts }
+    values: { published: false }
+  - scope: { path: "_posts/travel", type: posts }
+    values: { published: false }
+
 exclude:
-    - bin
-    - docs
-    - Gemfile
-    - Gemfile.lock
-    - README.md
-    - vendor
+  - bin
+  - docs
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

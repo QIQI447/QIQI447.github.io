@@ -1,50 +1,17 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
   {% include head.html %}
+  <body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-  <body>
-    <script>
-      if (document.documentElement.classList.contains('dark-mode')) {
-        document.body.classList.add('dark-mode');
-      }
-    </script>
-
-    <button type="button" id="dark-mode-toggle" class="dark-mode-toggle-btn" title="切换到夜间模式" aria-label="切换到夜间模式" aria-pressed="false">
-      <i class="fa fa-moon-o" aria-hidden="true"></i>
-    </button>
-
-    <span class="mobile btn-mobile-menu">        
-      <div class="nav_container">
-         <nav class="nav-menu-item" style = "float:right">
-            <i class="nav-menu-item">
-              <a href="/#blog" title="{{site.blog_button.description}}" class="blog-button">  {{site.blog_button.title}}
-              </a>
-            </i>
-            {% for item in site.nav %}
-                <i class="nav-menu-item">
-
-                  <a href="{{item.url}}" title="{{item.description}}" class="btn-mobile-menu__icon">
-                      {{item.title}}
-                  </a>
-                </i>
-            {% endfor %}
-          </nav>
-      </div>
-    </span>
-    
     {% include side-panel.html %}
 
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner">
-            {{ content }}
-            {% include footer.html %}
-        </div>
-    </div>
-    
-    {% include external.html %}
-    
-    <script src="{{ "/js/dark-mode.js" | prepend: site.baseurl }}"></script>
-  </body>
+    <main id="main-content" class="site-main">
+      {{ content }}
+    </main>
 
+    {% include footer.html %}
+    {% include external.html %}
+  </body>
 </html>
+

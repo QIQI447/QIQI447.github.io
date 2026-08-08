@@ -1,3 +1,6 @@
-<script src="/js/main.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="{{ '/js/main.js' | relative_url }}?v={{ site.version }}"></script>
+<script src="{{ '/js/dark-mode.js' | relative_url }}?v={{ site.version }}"></script>
+{% if page.layout == 'post' %}
+<script src="{{ '/js/highlight.pack.js' | relative_url }}?v={{ site.version }}"></script>
+<script>if (window.hljs) { window.hljs.initHighlightingOnLoad(); }</script>
+{% endif %}

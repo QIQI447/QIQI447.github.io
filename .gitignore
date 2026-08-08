@@ -1,4 +1,5 @@
 _site/
+_preview/
 .sass-cache/
 *.DS_Store
 .idea

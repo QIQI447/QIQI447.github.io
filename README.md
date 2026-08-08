@@ -1,83 +1,84 @@
-# LyraZeta.github.io
+# QIQI447 · Personal Website
 
-个人静态网站模板，基于 Jekyll 构建并部署到 GitHub Pages。
+这是 [QIQI447](https://github.com/QIQI447) 的个人主页与博客，基于 Jekyll 构建，并通过 GitHub Actions 自动部署到 GitHub Pages。
 
-本分支是纯静态站版本，适合直接作为 GitHub Pages 个人网站或博客模板使用。动态后端、后台面板、文章加密服务和服务器部署文件不放在本分支；需要后端功能请使用 `dynamic-site` 分支。
+## 已实现
 
-## 分支说明
-
-| 分支 | 用途 | 是否包含后端 |
-| --- | --- | --- |
-| `main` | GitHub Pages 静态网页部署分支 | 否 |
-| `static-site` | 静态模板备份分支 | 否 |
-| `dynamic-site` | 个人服务器动态网站分支 | 是 |
-
-## 目录结构
-
-```text
-_posts/               文章源文件
-_layouts/             页面布局
-_includes/            公共模板片段
-css/                  样式文件
-js/                   前端脚本
-images/               图片资源
-index.html            首页
-archive.html          归档页
-tags.html             标签页
-about.md              关于页
-support.md            支持页
-```
+- 个人主页、项目展示、文章归档、标签页和关于页
+- 桌面端与移动端响应式布局
+- 浅色 / 深色主题切换，并记住用户偏好
+- Jekyll 文章、代码高亮、MathJax 公式和文章目录
+- GitHub Pages 项目站点路径适配
+- 推送 `main` 分支后自动构建部署
 
 ## 本地预览
 
+需要 Ruby 3.2 与 Bundler：
+
 ```bash
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve --config _config.yml,_config.github-pages.yml
 ```
 
-默认访问地址：
+打开：
 
 ```text
-http://127.0.0.1:4000
+http://127.0.0.1:4000/qq.github.io/
 ```
 
-## 静态构建
+## 发布到 GitHub Pages
 
-```bash
-bin/build-static
+1. 打开仓库的 `Settings → Pages`。
+2. 在 `Build and deployment` 中选择 `GitHub Actions`。
+3. 将本地改动提交并推送到 `main` 分支。
+4. 等待 `deploy_static_pages` 工作流完成。
+
+当前仓库名是 `qq.github.io`，因此站点地址为：
+
+```text
+https://qiqi447.github.io/qq.github.io/
 ```
 
-构建结果默认输出到 `_site/`。该目录是生成产物，不需要提交。
+如果以后把仓库重命名为 `QIQI447.github.io`，请同时将 `_config.yml` 和 `_config.github-pages.yml` 中的 `baseurl` 改为 `""`。
+
+## 个性化配置
+
+站点身份、导航和社交链接集中在 `_config.yml`：
+
+```yaml
+title: QIQI447
+description: 记录学习、项目与持续发生的想法。
+url: "https://qiqi447.github.io"
+baseurl: "/qq.github.io"
+
+social:
+  github: QIQI447
+```
+
+GitHub 头像保存在 `images/avatar-profile.png`。替换同名文件即可更新全站头像与分享缩略图。
 
 ## 写文章
 
-在 `_posts/` 下新增 Markdown 文件，文件名使用 Jekyll 标准格式：
+在 `_posts/` 根目录新增 Markdown 文件，文件名格式：
 
 ```text
 YYYY-MM-DD-title.md
 ```
 
-建议文件名避免空格和特殊标点，使用连字符分隔英文词。示例：
-
-```text
-2026-06-25-阿丘科技-AI-Agent.md
-```
-
-文章 front matter 示例：
+文章示例：
 
 ```yaml
 ---
 layout: post
 title: "文章标题"
-date: 2026-06-25
+date: 2026-08-08 18:00:00 +0800
 description: "文章摘要"
-tag: 标签
-math: true
+tags:
+  - 学习
+  - 项目
+math: false
 ---
 ```
 
-如果文章不需要公式渲染，可以省略 `math: true`。
+fork 中原作者的示例文章仍保存在分类子目录中，但已经通过 `_config.yml` 的 `defaults` 设置为不发布，避免在个人站点中错误署名。确认不再需要后，可以自行删除这些目录与对应图片。
 
-## GitHub Pages
-
-本仓库的 GitHub Actions 会在推送到 `main` 后构建并部署静态页面。只做静态网站时，不需要配置服务器、后端服务或数据库。

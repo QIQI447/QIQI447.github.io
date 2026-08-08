@@ -2,46 +2,45 @@
 layout: default
 ---
 
-<!-- 文章布局 -->
-<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.description %}
-    <p class="post-description">{{ page.description }}</p>  <!-- 增加：文章描述样式：description -->
-    {% endif %}
-    <div class="post-meta">
-      <img src="/images/calendar.png" width="20px" class="post-meta__icon" alt="日期"/>
-      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>
-      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+<article class="article shell" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="article-header">
+    <a class="article-header__back" href="{{ '/archive/' | relative_url }}">← 返回文章列表</a>
+    <div class="article-header__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: '%Y年%m月%d日' }}</time>
+      {% for tag in page.tags %}<a href="{{ '/tags/' | append: '#' | append: tag | relative_url }}">{{ tag }}</a>{% endfor %}
     </div>
+    <h1 itemprop="headline">{{ page.title }}</h1>
+    {% if page.description %}<p class="article-header__description">{{ page.description }}</p>{% endif %}
   </header>
 
-  {% if site.enableToc %}
-    <nav class="post-toc" aria-label="文章目录">
-      <h2 class="post-toc__title">目录</h2>
+  <div class="article-layout">
+    {% if site.enableToc %}
+    <aside class="article-toc" aria-label="文章目录">
+      <p>目录</p>
       {% include toc.html html=content sanitize=true h_max=3 %}
-    </nav>
-  {% endif %}
+    </aside>
+    {% endif %}
 
-  <section class="post">
-    {{ content }}
-  </section>
-
+    <div class="post prose" itemprop="articleBody">
+      {{ content }}
+    </div>
+  </div>
 </article>
 
 {% if page.previous or page.next %}
-  <nav class="post-pager" aria-label="文章翻页">
-    {% if page.previous %}
-      <a class="post-pager__item post-pager__item--previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}">
-        <span class="post-pager__label">上一篇</span>
-        <span class="post-pager__title">{{ page.previous.title }}</span>
-      </a>
-    {% endif %}
-    {% if page.next %}
-      <a class="post-pager__item post-pager__item--next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}">
-        <span class="post-pager__label">下一篇</span>
-        <span class="post-pager__title">{{ page.next.title }}</span>
-      </a>
-    {% endif %}
-  </nav>
+<nav class="post-pager shell" aria-label="文章翻页">
+  {% if page.previous %}
+  <a href="{{ page.previous.url | relative_url }}">
+    <span>上一篇</span>
+    <strong>{{ page.previous.title }}</strong>
+  </a>
+  {% endif %}
+  {% if page.next %}
+  <a class="post-pager__next" href="{{ page.next.url | relative_url }}">
+    <span>下一篇</span>
+    <strong>{{ page.next.title }}</strong>
+  </a>
+  {% endif %}
+</nav>
 {% endif %}
+

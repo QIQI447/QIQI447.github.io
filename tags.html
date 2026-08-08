@@ -1,25 +1,32 @@
 ---
 layout: page
-title: 
-header: 根据快速导航到相应的文章
-group: navigation
+title: 文章标签
+kicker: Explore by topic
+description: 从感兴趣的主题开始浏览。
+permalink: /tags/
 ---
-{% include JB/setup %}
 
-<ul class="tag_box inline">
-  {% assign tags_list = site.tags %}  
-  {% include JB/tags_list %}
-</ul>
-
-<div class = "card">
-{% for tag in site.tags %} 
-
-  <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
-  <ul>
-    {% assign pages_list = tag[1] %}  
-    {% include JB/pages_list %}
-  </ul>
-
-
-{% endfor %}
+<div class="tag-cloud" aria-label="全部标签">
+  {% for tag in site.tags %}
+  <a href="#{{ tag[0] | slugify }}">{{ tag[0] }} <span>{{ tag[1].size }}</span></a>
+  {% else %}
+  <p>标签会随着新文章一起出现。</p>
+  {% endfor %}
 </div>
+
+<div class="tag-sections">
+  {% for tag in site.tags %}
+  <section id="{{ tag[0] | slugify }}" class="tag-section">
+    <h2>{{ tag[0] }}</h2>
+    <div class="tag-section__posts">
+      {% for post in tag[1] %}
+      <a href="{{ post.url | relative_url }}">
+        <span>{{ post.title }}</span>
+        <time>{{ post.date | date: '%Y.%m.%d' }}</time>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+
