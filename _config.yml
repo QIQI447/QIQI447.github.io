@@ -6,11 +6,10 @@ author: QIQI447
 avatarTitle: QIQI447
 avatarDesc: Explore · Build · Share
 
-# This repository is currently published as a GitHub Pages project site.
-# If you rename it to QIQI447.github.io, change baseurl to "".
+# GitHub Pages user site: https://qiqi447.github.io/
 url: "https://qiqi447.github.io"
-baseurl: "/qq.github.io"
-repository: QIQI447/qq.github.io
+baseurl: ""
+repository: QIQI447/QIQI447.github.io
 version: "20260808"
 lang: zh-CN
 timezone: Asia/Shanghai

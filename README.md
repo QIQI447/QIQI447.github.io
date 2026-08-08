@@ -23,7 +23,7 @@ bundle exec jekyll serve --config _config.yml,_config.github-pages.yml
 打开：
 
 ```text
-http://127.0.0.1:4000/qq.github.io/
+http://127.0.0.1:4000/
 ```
 
 ## 发布到 GitHub Pages
@@ -33,13 +33,13 @@ http://127.0.0.1:4000/qq.github.io/
 3. 将本地改动提交并推送到 `main` 分支。
 4. 等待 `deploy_static_pages` 工作流完成。
 
-当前仓库名是 `qq.github.io`，因此站点地址为：
+当前仓库名是 `QIQI447.github.io`，因此站点地址为：
 
 ```text
-https://qiqi447.github.io/qq.github.io/
+https://qiqi447.github.io/
 ```
 
-如果以后把仓库重命名为 `QIQI447.github.io`，请同时将 `_config.yml` 和 `_config.github-pages.yml` 中的 `baseurl` 改为 `""`。
+GitHub Pages 的个人根域名站点要求仓库保持名为 `QIQI447.github.io`，两个配置文件中的 `baseurl` 保持为 `""`。
 
 ## 个性化配置
 
@@ -49,7 +49,7 @@ https://qiqi447.github.io/qq.github.io/
 title: QIQI447
 description: 记录学习、项目与持续发生的想法。
 url: "https://qiqi447.github.io"
-baseurl: "/qq.github.io"
+baseurl: ""
 
 social:
   github: QIQI447
@@ -81,4 +81,3 @@ math: false
 ```
 
 fork 中原作者的示例文章仍保存在分类子目录中，但已经通过 `_config.yml` 的 `defaults` 设置为不发布，避免在个人站点中错误署名。确认不再需要后，可以自行删除这些目录与对应图片。
-

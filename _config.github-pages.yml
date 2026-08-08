@@ -1,10 +1,9 @@
 # GitHub Pages build overlay.
 url: "https://qiqi447.github.io"
-baseurl: "/qq.github.io"
+baseurl: ""
 
 deployment:
   mode: static
 
 backend:
   enabled: false
-
