@@ -147,49 +147,49 @@ button {
   --page-background-image: none;
   --page-background-position: center top;
   background:
-    linear-gradient(rgba(247, 244, 238, 0.48), rgba(247, 244, 238, 0.72)),
+    linear-gradient(rgba(247, 244, 238, 0.2), rgba(247, 244, 238, 0.38)),
     var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
 }
 
 .archive-page {
-  --page-background-image: url("../images/page-archive-background.jpg");
-  --page-background-position: center 38%;
+  --page-background-image: url("../images/page-archive-background.png");
+  --page-background-position: center 44%;
 }
 
 .tags-page {
-  --page-background-image: url("../images/page-tags-background.jpg");
-  --page-background-position: center top;
+  --page-background-image: url("../images/page-tags-background.png");
+  --page-background-position: center 34%;
 }
 
 .about-page {
-  --page-background-image: url("../images/page-about-background.jpg");
-  --page-background-position: center top;
+  --page-background-image: url("../images/page-about-background.png");
+  --page-background-position: center 36%;
 }
 
 :root[data-theme="dark"] .scenic-page {
   background:
-    linear-gradient(rgba(17, 23, 29, 0.62), rgba(17, 23, 29, 0.8)),
+    linear-gradient(rgba(17, 23, 29, 0.42), rgba(17, 23, 29, 0.62)),
     var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
 }
 
 .scenic-page .site-header,
 .scenic-page .site-footer {
-  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  background: color-mix(in srgb, var(--paper) 68%, transparent);
   border-color: var(--line);
   backdrop-filter: blur(18px);
 }
 
 .scenic-page .page-hero,
 .scenic-page .post-container > .post {
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
   border: 1px solid var(--line-strong);
   box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(10px);
 }
 
 .scenic-page .page-hero {
   margin-top: 48px;
-  padding: clamp(52px, 7vw, 88px) clamp(28px, 6vw, 72px);
+  padding: clamp(44px, 6vw, 68px) clamp(26px, 5vw, 60px);
   border-radius: var(--radius-lg);
 }
 
@@ -198,8 +198,8 @@ button {
 }
 
 .scenic-page .post-container > .post {
-  max-width: 900px;
-  padding: clamp(28px, 5vw, 56px);
+  max-width: 840px;
+  padding: clamp(26px, 4vw, 44px);
   border-radius: var(--radius-md);
 }
 
