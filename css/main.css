@@ -427,9 +427,9 @@ button {
 .hero__copy h1 {
   max-width: 780px;
   margin: 0;
-  font-family: "华文行楷", STXingkai, "Xingkai SC", KaiTi, cursive;
+  font-family: "方正瘦金书简体", "瘦金体", FZShouJinShu-S10S, "华文楷体", STKaiti, KaiTi, serif;
   font-size: clamp(3.45rem, 6.7vw, 6.7rem);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.98;
 }
@@ -460,6 +460,7 @@ button {
   max-width: 600px;
   margin: 32px 0 0;
   color: var(--ink-soft);
+  font-family: "华文行楷", STXingkai, "Xingkai SC", KaiTi, cursive;
   font-size: clamp(1rem, 1.5vw, 1.16rem);
   line-height: 1.9;
 }
