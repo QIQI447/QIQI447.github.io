@@ -392,12 +392,36 @@ button {
 
 /* Hero */
 .hero {
+  position: relative;
   display: grid;
   min-height: calc(100vh - var(--header-height) - 26px);
   grid-template-columns: minmax(0, 1.2fr) minmax(350px, 0.72fr);
   align-items: center;
   gap: clamp(48px, 7vw, 108px);
   padding-block: 70px 96px;
+  isolation: isolate;
+}
+
+.home-page .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 50%;
+  z-index: -1;
+  width: 100vw;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(247, 244, 238, 0.04) 0%, rgba(247, 244, 238, 0.12) 68%, var(--paper) 100%),
+    linear-gradient(90deg, rgba(247, 244, 238, 0.95) 0%, rgba(247, 244, 238, 0.84) 43%, rgba(247, 244, 238, 0.48) 68%, rgba(247, 244, 238, 0.2) 100%),
+    url("../images/home-background-original-clean.jpg") 56% center / cover no-repeat;
+  border-bottom: 1px solid var(--line);
+  transform: translateX(-50%);
+}
+
+:root[data-theme="dark"] .home-page .hero::before {
+  background:
+    linear-gradient(to bottom, rgba(17, 23, 29, 0.1) 0%, rgba(17, 23, 29, 0.22) 68%, var(--paper) 100%),
+    linear-gradient(90deg, rgba(17, 23, 29, 0.96) 0%, rgba(17, 23, 29, 0.84) 43%, rgba(17, 23, 29, 0.6) 68%, rgba(17, 23, 29, 0.42) 100%),
+    url("../images/home-background-original-clean.jpg") 56% center / cover no-repeat;
 }
 
 .hero__copy h1 {
@@ -1345,6 +1369,22 @@ button {
     padding-block: 72px 110px;
   }
 
+  .home-page .hero::before {
+    background:
+      linear-gradient(to bottom, rgba(247, 244, 238, 0.42) 0%, rgba(247, 244, 238, 0.72) 34rem, var(--paper) 48rem, var(--paper) 100%),
+      linear-gradient(90deg, rgba(247, 244, 238, 0.93) 0%, rgba(247, 244, 238, 0.72) 68%, rgba(247, 244, 238, 0.48) 100%),
+      url("../images/home-background-original-clean.jpg") 60% top / auto 760px no-repeat,
+      var(--paper);
+  }
+
+  :root[data-theme="dark"] .home-page .hero::before {
+    background:
+      linear-gradient(to bottom, rgba(17, 23, 29, 0.46) 0%, rgba(17, 23, 29, 0.76) 34rem, var(--paper) 48rem, var(--paper) 100%),
+      linear-gradient(90deg, rgba(17, 23, 29, 0.94) 0%, rgba(17, 23, 29, 0.78) 68%, rgba(17, 23, 29, 0.62) 100%),
+      url("../images/home-background-original-clean.jpg") 60% top / auto 760px no-repeat,
+      var(--paper);
+  }
+
   .hero__copy {
     max-width: 780px;
   }
@@ -1490,6 +1530,22 @@ button {
   .hero {
     gap: 70px;
     padding-block: 62px 94px;
+  }
+
+  .home-page .hero::before {
+    background:
+      linear-gradient(to bottom, rgba(247, 244, 238, 0.58) 0%, rgba(247, 244, 238, 0.82) 28rem, var(--paper) 41rem, var(--paper) 100%),
+      linear-gradient(90deg, rgba(247, 244, 238, 0.93), rgba(247, 244, 238, 0.66)),
+      url("../images/home-background-original-clean.jpg") 84% top / auto 650px no-repeat,
+      var(--paper);
+  }
+
+  :root[data-theme="dark"] .home-page .hero::before {
+    background:
+      linear-gradient(to bottom, rgba(17, 23, 29, 0.62) 0%, rgba(17, 23, 29, 0.84) 28rem, var(--paper) 41rem, var(--paper) 100%),
+      linear-gradient(90deg, rgba(17, 23, 29, 0.94), rgba(17, 23, 29, 0.72)),
+      url("../images/home-background-original-clean.jpg") 84% top / auto 650px no-repeat,
+      var(--paper);
   }
 
   .hero__copy h1 {
