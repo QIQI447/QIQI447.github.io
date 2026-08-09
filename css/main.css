@@ -137,6 +137,66 @@ button {
   min-height: calc(100vh - 300px);
 }
 
+.scenic-page {
+  --page-background-image: none;
+  --page-background-position: center top;
+  background:
+    linear-gradient(rgba(247, 244, 238, 0.48), rgba(247, 244, 238, 0.72)),
+    var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
+}
+
+.archive-page {
+  --page-background-image: url("../images/page-archive-background.jpg");
+  --page-background-position: center 38%;
+}
+
+.tags-page {
+  --page-background-image: url("../images/page-tags-background.jpg");
+  --page-background-position: center top;
+}
+
+.about-page {
+  --page-background-image: url("../images/page-about-background.jpg");
+  --page-background-position: center top;
+}
+
+:root[data-theme="dark"] .scenic-page {
+  background:
+    linear-gradient(rgba(17, 23, 29, 0.62), rgba(17, 23, 29, 0.8)),
+    var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
+}
+
+.scenic-page .site-header,
+.scenic-page .site-footer {
+  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  border-color: var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.scenic-page .page-hero,
+.scenic-page .post-container > .post {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(16px);
+}
+
+.scenic-page .page-hero {
+  margin-top: 48px;
+  padding: clamp(52px, 7vw, 88px) clamp(28px, 6vw, 72px);
+  border-radius: var(--radius-lg);
+}
+
+.scenic-page .post-container {
+  padding-top: 32px;
+}
+
+.scenic-page .post-container > .post {
+  max-width: 900px;
+  padding: clamp(28px, 5vw, 56px);
+  border-radius: var(--radius-md);
+}
+
 /* Header */
 .site-header {
   position: sticky;
@@ -1420,6 +1480,24 @@ button {
 
 @media (max-width: 760px) {
   :root { --header-height: 70px; }
+
+  .scenic-page {
+    background-attachment: scroll;
+  }
+
+  .scenic-page .page-hero {
+    margin-top: 24px;
+    padding: 42px 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .scenic-page .post-container {
+    padding-top: 22px;
+  }
+
+  .scenic-page .post-container > .post {
+    padding: 26px 20px;
+  }
 
   .shell {
     width: min(calc(100% - 32px), var(--shell));

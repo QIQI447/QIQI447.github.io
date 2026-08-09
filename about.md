@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 关于我
+body_class: scenic-page about-page
 kicker: About me
 description: 一份保持更新的自我介绍，也是一张通往我的作品与思考的地图。
 permalink: /about/
@@ -25,4 +26,3 @@ permalink: /about/
 如果你对我的内容感兴趣，欢迎前往 [GitHub](https://github.com/QIQI447) 查看最新动态。
 
 > 保持好奇，持续构建，诚实记录。
-
