@@ -20,6 +20,12 @@
   --radius-lg: 36px;
   --shell: 1180px;
   --header-height: 78px;
+  --font-xingkai: "华文行楷", STXingkai, "Xingkai SC", KaiTi, cursive;
+}
+
+body,
+body * {
+  font-family: var(--font-xingkai) !important;
 }
 
 :root[data-theme="dark"] {
