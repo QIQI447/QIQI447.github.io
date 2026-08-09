@@ -394,7 +394,7 @@ button {
 .hero {
   position: relative;
   display: grid;
-  min-height: calc(100vh - var(--header-height) - 26px);
+  min-height: calc(100vh - var(--header-height));
   grid-template-columns: minmax(0, 1.2fr) minmax(350px, 0.72fr);
   align-items: center;
   gap: clamp(48px, 7vw, 108px);

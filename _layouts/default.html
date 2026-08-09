@@ -10,8 +10,9 @@
       {{ content }}
     </main>
 
-    {% include footer.html %}
+    {% unless page.body_class == 'home-page' %}
+      {% include footer.html %}
+    {% endunless %}
     {% include external.html %}
   </body>
 </html>
-
