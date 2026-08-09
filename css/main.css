@@ -427,7 +427,7 @@ button {
 .hero__copy h1 {
   max-width: 780px;
   margin: 0;
-  font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+  font-family: "Songti SC", STSong, SimSun, serif;
   font-size: clamp(3.45rem, 6.7vw, 6.7rem);
   font-weight: 500;
   letter-spacing: -0.055em;
@@ -442,7 +442,7 @@ button {
 .hero__copy h1 em {
   position: relative;
   color: var(--coral);
-  font-style: italic;
+  font-style: normal;
   white-space: nowrap;
 }
 
