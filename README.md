@@ -55,7 +55,7 @@ social:
   github: QIQI447
 ```
 
-GitHub 头像保存在 `images/avatar-profile.png`。替换同名文件即可更新全站头像与分享缩略图。
+头像保存在 `images/avatar-profile.jpg`。替换同名文件即可更新全站头像与分享缩略图。
 
 ## 写文章
 
