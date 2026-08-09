@@ -20,12 +20,18 @@
   --radius-lg: 36px;
   --shell: 1180px;
   --header-height: 78px;
-  --font-xingkai: "华文行楷", STXingkai, "Xingkai SC", KaiTi, cursive;
+  --font-kaiti: KaiTi, "华文楷体", STKaiti, serif;
+  --font-shoujin: "方正瘦金书简体", "瘦金体", FZShouJinShu-S10S, "华文楷体", STKaiti, KaiTi, serif;
 }
 
 body,
 body * {
-  font-family: var(--font-xingkai) !important;
+  font-family: var(--font-kaiti) !important;
+}
+
+.hero__copy h1,
+.hero__copy h1 * {
+  font-family: var(--font-shoujin) !important;
 }
 
 :root[data-theme="dark"] {
@@ -147,7 +153,7 @@ button {
   --page-background-image: none;
   --page-background-position: center top;
   background:
-    linear-gradient(rgba(247, 244, 238, 0.2), rgba(247, 244, 238, 0.38)),
+    linear-gradient(rgba(247, 244, 238, 0.06), rgba(247, 244, 238, 0.16)),
     var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
 }
 
@@ -168,26 +174,27 @@ button {
 
 :root[data-theme="dark"] .scenic-page {
   background:
-    linear-gradient(rgba(17, 23, 29, 0.42), rgba(17, 23, 29, 0.62)),
+    linear-gradient(rgba(17, 23, 29, 0.24), rgba(17, 23, 29, 0.42)),
     var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
 }
 
 .scenic-page .site-header,
 .scenic-page .site-footer {
-  background: color-mix(in srgb, var(--paper) 68%, transparent);
+  background: color-mix(in srgb, var(--paper) 54%, transparent);
   border-color: var(--line);
   backdrop-filter: blur(18px);
 }
 
 .scenic-page .page-hero,
 .scenic-page .post-container > .post {
-  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  background: color-mix(in srgb, var(--surface) 52%, transparent);
   border: 1px solid var(--line-strong);
   box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
 }
 
 .scenic-page .page-hero {
+  width: min(calc(100% - 80px), 980px);
   margin-top: 48px;
   padding: clamp(44px, 6vw, 68px) clamp(26px, 5vw, 60px);
   border-radius: var(--radius-lg);
@@ -198,7 +205,7 @@ button {
 }
 
 .scenic-page .post-container > .post {
-  max-width: 840px;
+  max-width: 760px;
   padding: clamp(26px, 4vw, 44px);
   border-radius: var(--radius-md);
 }
@@ -1492,6 +1499,7 @@ button {
   }
 
   .scenic-page .page-hero {
+    width: min(calc(100% - 32px), var(--shell));
     margin-top: 24px;
     padding: 42px 24px;
     border-radius: var(--radius-md);

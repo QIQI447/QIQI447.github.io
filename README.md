@@ -1,6 +1,6 @@
-# QIQI447 · Personal Website
+# 琦琦 · Personal Website
 
-这是 [QIQI447](https://github.com/QIQI447) 的个人主页与博客，基于 Jekyll 构建，并通过 GitHub Actions 自动部署到 GitHub Pages。
+这是 [琦琦](https://github.com/QIQI447) 的个人主页与博客，基于 Jekyll 构建，并通过 GitHub Actions 自动部署到 GitHub Pages。
 
 ## 已实现
 
@@ -46,7 +46,7 @@ GitHub Pages 的个人根域名站点要求仓库保持名为 `QIQI447.github.io
 站点身份、导航和社交链接集中在 `_config.yml`：
 
 ```yaml
-title: QIQI447
+title: 琦琦
 description: 记录学习、项目与持续发生的想法。
 url: "https://qiqi447.github.io"
 baseurl: ""

@@ -1,16 +1,16 @@
 # Site identity
-title: QIQI447
+title: 琦琦
 subtitle: 个人主页
 description: 记录学习、项目与持续发生的想法。
-author: QIQI447
-avatarTitle: QIQI447
+author: 琦琦
+avatarTitle: 琦琦
 avatarDesc: Explore · Build · Share
 
 # GitHub Pages user site: https://qiqi447.github.io/
 url: "https://qiqi447.github.io"
 baseurl: ""
 repository: QIQI447/QIQI447.github.io
-version: "20260809-8"
+version: "20260809-9"
 lang: zh-CN
 timezone: Asia/Shanghai
 
@@ -47,7 +47,7 @@ paginate: 8
 paginate_path: "page/:num/"
 
 # The fork contains the upstream author's example posts. Keep the source files
-# for reference, but do not publish them as QIQI447's work.
+# for reference, but do not publish them as 琦琦's work.
 defaults:
   - scope: { path: "_posts/Course_NeuralNetwork", type: posts }
     values: { published: false }
