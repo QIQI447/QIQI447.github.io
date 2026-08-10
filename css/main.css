@@ -152,30 +152,39 @@ button {
 .scenic-page {
   --page-background-image: none;
   --page-background-position: center top;
-  background:
+  --page-background-size: 1024px auto;
+  background-color: var(--paper);
+  background-image:
     linear-gradient(rgba(247, 244, 238, 0.06), rgba(247, 244, 238, 0.16)),
-    var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
+    var(--page-background-image);
+  background-position: center, var(--page-background-position);
+  background-size: 100% 100%, var(--page-background-size);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .archive-page {
   --page-background-image: url("../images/page-archive-background.png");
   --page-background-position: center 44%;
+  --page-background-size: 1024px 768px;
 }
 
 .tags-page {
   --page-background-image: url("../images/page-tags-background.png");
   --page-background-position: center 34%;
+  --page-background-size: 1024px 586px;
 }
 
 .about-page {
   --page-background-image: url("../images/page-about-background.png");
   --page-background-position: center 36%;
+  --page-background-size: 1024px 576px;
 }
 
 :root[data-theme="dark"] .scenic-page {
-  background:
+  background-image:
     linear-gradient(rgba(17, 23, 29, 0.24), rgba(17, 23, 29, 0.42)),
-    var(--page-background-image) var(--page-background-position) / cover no-repeat fixed;
+    var(--page-background-image);
 }
 
 .scenic-page .site-header,
@@ -1491,10 +1500,35 @@ button {
   }
 }
 
+@media (max-width: 1024px) {
+  .scenic-page {
+    --page-background-size: contain;
+  }
+}
+
+@media (min-width: 1025px) and (max-height: 767px) {
+  .archive-page {
+    --page-background-size: auto 100vh;
+  }
+}
+
+@media (min-width: 1025px) and (max-height: 585px) {
+  .tags-page {
+    --page-background-size: auto 100vh;
+  }
+}
+
+@media (min-width: 1025px) and (max-height: 575px) {
+  .about-page {
+    --page-background-size: auto 100vh;
+  }
+}
+
 @media (max-width: 760px) {
   :root { --header-height: 70px; }
 
   .scenic-page {
+    --page-background-position: center top;
     background-attachment: scroll;
   }
 
