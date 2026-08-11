@@ -150,9 +150,9 @@ button {
 }
 
 .scenic-page {
-  --page-background-image: none;
-  --page-background-position: center top;
-  --page-background-size: 1024px auto;
+  --page-background-image: url("../images/home-background-original-clean.jpg");
+  --page-background-position: 56% center;
+  --page-background-size: 1536px 864px;
   background-color: var(--paper);
   background-image:
     linear-gradient(rgba(247, 244, 238, 0.06), rgba(247, 244, 238, 0.16)),
@@ -161,24 +161,6 @@ button {
   background-size: 100% 100%, var(--page-background-size);
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-.archive-page {
-  --page-background-image: url("../images/page-archive-background.png");
-  --page-background-position: center 44%;
-  --page-background-size: 1024px 768px;
-}
-
-.tags-page {
-  --page-background-image: url("../images/page-tags-background.png");
-  --page-background-position: center 34%;
-  --page-background-size: 1024px 586px;
-}
-
-.about-page {
-  --page-background-image: url("../images/page-about-background.png");
-  --page-background-position: center 36%;
-  --page-background-size: 1024px 576px;
 }
 
 :root[data-theme="dark"] .scenic-page {
@@ -1500,26 +1482,14 @@ button {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1536px) {
   .scenic-page {
     --page-background-size: contain;
   }
 }
 
-@media (min-width: 1025px) and (max-height: 767px) {
-  .archive-page {
-    --page-background-size: auto 100vh;
-  }
-}
-
-@media (min-width: 1025px) and (max-height: 585px) {
-  .tags-page {
-    --page-background-size: auto 100vh;
-  }
-}
-
-@media (min-width: 1025px) and (max-height: 575px) {
-  .about-page {
+@media (min-width: 1537px) and (max-height: 863px) {
+  .scenic-page {
     --page-background-size: auto 100vh;
   }
 }
